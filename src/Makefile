@@ -1,6 +1,6 @@
 # Makefile for ClonalFrameML
-CC = g++
-CFLAGS += -O3 -fopenmp
+CC = $(CXX)
+CXXFLAGS += -O3 -fopenmp
 LDFLAGS += -fopenmp
 OBJECTS = main.o
 HEADERS = main.h brent.h powell.h
@@ -13,7 +13,7 @@ ClonalFrameML: $(OBJECTS)
 	$(CC) $(LDFLAGS) -o ClonalFrameML $(OBJECTS)
 
 main.o: main.cpp $(HEADERS)
-	$(CC) $(CFLAGS) -c -o main.o main.cpp
+	$(CC) $(CXXFLAGS) -c -o main.o main.cpp
 
 clean:
 	rm -f $(OBJECTS)
